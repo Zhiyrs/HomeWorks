@@ -1,16 +1,19 @@
 package com.company;
 
 public class Group {
-    Student [] students;
-    int grade;
+    static Student []students;
+    private static String nameOfCourse;
+    String date;
     int lastingInMonth;
 
-      public Group(){
-        this (null,0,0);
+    public Group(){
+        this (null,null,null,0);
     }
-    public Group(Student[]students, int grade,int lastingInMonth){
-        this.students =students;
-        this.grade=grade;
+
+    public Group(Student[]students, String nameOfCourse, String date, int lastingInMonth){
+        this.students = students;
+        this.nameOfCourse=nameOfCourse;
+        this.date = date;
         this.lastingInMonth = lastingInMonth;
     }
 
@@ -22,12 +25,19 @@ public class Group {
         this.students = students;
     }
 
-    public int getGrade() {
-        return grade;
+    public void setDate(String date) {
+        this.date = date;
+    }
+    public String getDate(String date) {
+        return date;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
+    public String getNameOfCourse() {
+        return nameOfCourse;
+    }
+
+    public void setNameOfCourse(int grade) {
+        this.nameOfCourse = nameOfCourse;
     }
 
     public int getLastingInMonth() {
@@ -37,14 +47,20 @@ public class Group {
     public void setLastingInMonth(int lastingInMonth) {
         this.lastingInMonth = lastingInMonth;
     }
-   // public void printDetailsOfGroup(){
-      //  System.out.println("Student : "+ students.length);
-      //  System.out.println("Course: "+ Course.getNameOfCourse());
-       // System.out.println("Date of beginning: "+Course.getDate());
-       // System.out.println("ID number: " + );
-      //  System.out.println("Teacher's data: "+());s
-      //  System.out.println();
-      //  System.out.println("   ***   ");
-    //}
+    public void printDetailsOfGroup(){
+        for (int i = 0;i<4; i++){
+            System.out.println(StudentData.students [i].birthDate+
+                    " "+StudentData.students [i].familyName+
+                    " "+StudentData.students [i].name+
+                    " "+StudentData.students [i].gender+
+                    " "+StudentData.students [i].age);
+        }
+        System.out.println("Course: "+ Course.getNameOfCourse());
+        System.out.println("Date of beginning: "+Course.getDate());
+        System.out.println();
+        System.out.println("   ***   ");
+    }
+
+
 
 }

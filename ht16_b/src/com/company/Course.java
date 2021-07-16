@@ -1,8 +1,9 @@
 package com.company;
 
 public class Course {
+
     private static String nameOfCourse;
-    private static String date;
+    public static Object date;
     int ID;
     String teachersName;
 
@@ -22,7 +23,7 @@ public class Course {
         this.nameOfCourse = nameOfCourse;
     }
 
-    public void setDate(String date) {
+    public void setDate(Object date) {
         this.date = date;
     }
 
@@ -38,7 +39,7 @@ public class Course {
         return nameOfCourse;
     }
 
-    public static String getDate() {
+    public static Object getDate() {
         return date;
     }
 

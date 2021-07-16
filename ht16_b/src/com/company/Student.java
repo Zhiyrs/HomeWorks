@@ -1,6 +1,9 @@
 package com.company;
 
-public class Student {
+class StudentData{
+   static Student []students = new Student[4];
+}
+class Student {
     String birthDate;
     String familyName;
     String name;
@@ -10,15 +13,15 @@ public class Student {
     public Student(){
         this (null,null,null,null,0);
     }
+
     public Student(String b,String f,String n,String g, int a){
         this.birthDate = b;
         this.familyName =f;
         this.name = n;
         this.gender = g;
         this.age = a;
-
-        System.out.printf("Student data: %s\n", this);
     }
+
     public void setBirthDate(String b){
         this.birthDate = b;
     }
@@ -55,8 +58,5 @@ public class Student {
         return age;
     }
 
-    public String toString(){
-        return String.format("\n birth: %s\n Second name: %s\n First name: %s\n age: %s\n gender: %s\n ", birthDate,familyName,name,age,gender);
-    }
 }
 
