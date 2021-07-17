@@ -1,7 +1,7 @@
 package com.company;
 
 class StudentData{
-   static Student []students = new Student[4];
+
 }
 class Student {
     String birthDate;
@@ -37,25 +37,32 @@ class Student {
     public void setAge(int a){
         this.age = (a>15?a:0);
     }
-
     public String getBirthDate() {
         return birthDate;
     }
-
     public String getFamilyName() {
         return familyName;
     }
-
     public String getName() {
         return name;
     }
-
     public String getGender() {
         return gender;
     }
-
     public int getAge() {
         return age;
+    }
+
+    public void setStudentData(String b,String f,String n,String g, int a){
+        birthDate = b;
+        familyName = f;
+        name = n;
+        gender = g;
+        age = a;
+    }
+    public void showStudentDetails (){
+        System.out.println("Birth date: "+birthDate+ "\nSurname: "+ familyName+"\nName: "+ name+"\nGender: "+ gender+"\nAge: "+ age);
+        System.out.println();
     }
 
 }

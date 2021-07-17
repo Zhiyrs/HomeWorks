@@ -1,8 +1,8 @@
 package com.company;
 
 public class Group {
-    static Student []students;
-    private static String nameOfCourse;
+    Student students;
+    private String nameOfCourse;
     String date;
     int lastingInMonth;
 
@@ -10,25 +10,25 @@ public class Group {
         this (null,null,null,0);
     }
 
-    public Group(Student[]students, String nameOfCourse, String date, int lastingInMonth){
+    public Group(Student students, String nameOfCourse, String date, int lastingInMonth){
         this.students = students;
         this.nameOfCourse=nameOfCourse;
         this.date = date;
         this.lastingInMonth = lastingInMonth;
     }
 
-    public Student[] getStudents() {
+    public Student getStudents() {
         return students;
     }
 
-    public void setStudents(Student[] students) {
+    public void setStudents(Student students) {
         this.students = students;
     }
 
     public void setDate(String date) {
         this.date = date;
     }
-    public String getDate(String date) {
+    public String getDate() {
         return date;
     }
 
@@ -47,20 +47,11 @@ public class Group {
     public void setLastingInMonth(int lastingInMonth) {
         this.lastingInMonth = lastingInMonth;
     }
-    public void printDetailsOfGroup(){
-        for (int i = 0;i<4; i++){
-            System.out.println(StudentData.students [i].birthDate+
-                    " "+StudentData.students [i].familyName+
-                    " "+StudentData.students [i].name+
-                    " "+StudentData.students [i].gender+
-                    " "+StudentData.students [i].age);
-        }
-        System.out.println("Course: "+ Course.getNameOfCourse());
-        System.out.println("Date of beginning: "+Course.getDate());
+    public void showGroupDetails (){
+        System.out.println("Course: " + getNameOfCourse());
+        System.out.println("Date: " +getDate());
+        System.out.println("Duration: "+getLastingInMonth());
+        System.out.println("   ---   ");
         System.out.println();
-        System.out.println("   ***   ");
     }
-
-
-
 }
